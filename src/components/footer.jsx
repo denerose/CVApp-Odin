@@ -1,6 +1,6 @@
-import reactLogo from './assets/react.svg'
-
 function Footer() {
+
+    const reactLogo = 'src/assets/react.svg'
 
     return (
         <div id="footerContainer">

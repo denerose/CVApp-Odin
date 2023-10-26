@@ -67,3 +67,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+input {
+  width: auto;
+}
+
+input[type=submit] {
+  max-width: 45%;
+  align-self: center;
+}
