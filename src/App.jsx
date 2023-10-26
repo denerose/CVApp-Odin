@@ -14,6 +14,12 @@ function App() {
 
   const [educationArray, setEducationArray] = useState([])
   const [workArray, setWorkArray] = useState([])
+
+  function removeEducationRecord(keyToRemove){
+    const newList = educationArray.filter(item => item.uid !== keyToRemove)
+    console.log(newList)
+    setEducationArray(newList)
+  }
   
   return (
     <main>
@@ -39,11 +45,12 @@ function App() {
         />
         <div>
           <h3>Education</h3>
-          {educationArray.map((education, index) => {
-            return <div key={index}>
+          {educationArray.map((education) => {
+            return <div key={education.uid}>
               <EducationCard
               props={education}
               />
+              <button type="button" className="removeBtn" onClick={() => removeEducationRecord(education.uid)}>remove</button>
             </div>
           })}
         </div>
