@@ -72,11 +72,17 @@ form {
   display: flex;
   flex-flow: column wrap;
   gap: 5px;
-  justify-content: space-between;
+  justify-content: stretch;
   align-items: flex-start;
 }
-input {
+
+label {
   width: auto;
+  align-self: auto;
+}
+
+input {
+  width: 15rem;
 }
 
 input[type=submit] {

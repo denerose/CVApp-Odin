@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-function InfoForm() {
+// eslint-disable-next-line react/prop-types
+export function InfoForm({setUserDataInput}) {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -12,6 +13,10 @@ function InfoForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs)
+    setUserDataInput({
+      name : inputs.name,
+      email : inputs.email
+    })
   }
 
   return (
@@ -21,15 +26,19 @@ function InfoForm() {
         type="text" 
         name="name" 
         value={inputs.name || ""} 
+        placeholder='Jane A. Doe'
         onChange={handleChange}
+        autoComplete='name'
       />
       </label>
-      <label>Enter your age:
+      <label>Enter your email:
         <input 
-          type="number" 
-          name="age" 
-          value={inputs.age || ""} 
+          type="email" 
+          name="email" 
+          value={inputs.email || ""} 
+          placeholder='email@example.com'
           onChange={handleChange}
+          autoComplete='email'
         />
         </label>
         <input type="submit" />
@@ -37,4 +46,13 @@ function InfoForm() {
   )
 }
 
-export default InfoForm
+// eslint-disable-next-line react/prop-types
+export function InfoCard({name, email}) {
+
+  return (
+    <div className='sectionCard'>
+      <h3>{name}</h3>
+      <p>{email}</p>
+    </div>
+  )
+}
