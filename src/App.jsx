@@ -3,6 +3,7 @@ import './App.css'
 import { InfoForm,  InfoCard } from './components/infoForm'
 import { EducationForm } from './components/educationForm'
 import EducationCard from './components/educationCard'
+import { WorkForm } from './components/workForm'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   })
 
   const [educationArray, setEducationArray] = useState([])
+  const [workArray, setWorkArray] = useState([])
   
   return (
     <main>
@@ -23,6 +25,10 @@ function App() {
         <EducationForm
           newEducation={setEducationArray}
           currentEducation={educationArray}
+        />
+        <WorkForm 
+          setWork={setWorkArray}
+          currentWork={workArray}
         />
       </div>
       <div className="previewWindow">
