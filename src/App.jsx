@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { InfoForm,  InfoCard } from './components/infoForm'
+import { EducationForm } from './components/educationForm'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     email: "email@example.com"
   })
 
+  const [educationArray, setEducationArray] = useState([{uni: 'test'}])
   
 
   return (
@@ -18,6 +20,10 @@ function App() {
         <InfoForm 
           setUserDataInput={setUserData}
         />
+        <EducationForm
+          newEducation={setEducationArray}
+          currentEducation={educationArray}
+        />
       </div>
       <div className="previewWindow">
         <h1>Preview</h1>
@@ -25,6 +31,13 @@ function App() {
           name={userData.name}
           email={userData.email}
         />
+        <div>
+          {educationArray.map((education, index) => {
+            return <div key={index}>
+              <h3>{education.uni}</h3>
+            </div>
+          })}
+        </div>
       </div>
     </main>
   )
