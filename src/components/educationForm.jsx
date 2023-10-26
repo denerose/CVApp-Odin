@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export function EducationForm({newEducation, currentEducation}) {
     const [inputs, setInputs] = useState({});
@@ -12,6 +13,8 @@ export function EducationForm({newEducation, currentEducation}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const newID = uuidv4();
+        setInputs(values => ({...values, uid: newID}))
         console.log(inputs)
         if (currentEducation.length < 0) {newEducation(inputs)}
         else {
@@ -29,6 +32,7 @@ export function EducationForm({newEducation, currentEducation}) {
                 placeholder='School of Hard Knocks'
                 onChange={handleChange}
                 autoComplete='no'
+                required
             />
             <label>Qualification</label>
                 <input 
@@ -38,6 +42,7 @@ export function EducationForm({newEducation, currentEducation}) {
                 placeholder='Bachelor of Arts (Gender Studies)'
                 onChange={handleChange}
                 autoComplete='no'
+                required
                 />
             <div className="dateBox">
             <label>From:</label>
@@ -48,6 +53,7 @@ export function EducationForm({newEducation, currentEducation}) {
                     placeholder='2000'
                     onChange={handleChange}
                     autoComplete='year'
+                    required
                 />
             <label>To:</label>
                 <input 

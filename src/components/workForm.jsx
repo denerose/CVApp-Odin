@@ -29,6 +29,7 @@ export function WorkForm({setWork, currentWork}) {
                 placeholder='Company Inc'
                 onChange={handleChange}
                 autoComplete='no'
+                required
             />
             <label>Role Title</label>
                 <input 
@@ -38,6 +39,7 @@ export function WorkForm({setWork, currentWork}) {
                 placeholder='Job Title'
                 onChange={handleChange}
                 autoComplete='no'
+                required
             />
             <div className="dateBox">
             <label>From:</label>
@@ -48,6 +50,7 @@ export function WorkForm({setWork, currentWork}) {
                     placeholder='2000'
                     onChange={handleChange}
                     autoComplete='year'
+                    required
                 />
             <label>To:</label>
                 <input 

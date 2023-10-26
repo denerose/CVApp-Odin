@@ -2,7 +2,7 @@
 function EducationCard({props}) {
 
     return (
-        <div className="educationCard">
+        <div className="educationCard" key={props.uid}>
             <h4>{props.uni}</h4>
             <p>{props.qual}</p>
             <p>{props.from} - {props.to}</p>

@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 
-// eslint-disable-next-line react/prop-types
 export function InfoForm({setUserDataInput}) {
   const [inputs, setInputs] = useState({});
 
@@ -29,6 +29,7 @@ export function InfoForm({setUserDataInput}) {
         placeholder='Jane A. Doe'
         onChange={handleChange}
         autoComplete='name'
+        required
       />
       </label>
       <label>Enter your email:
@@ -39,6 +40,7 @@ export function InfoForm({setUserDataInput}) {
           placeholder='email@example.com'
           onChange={handleChange}
           autoComplete='email'
+          required
         />
         </label>
         <input type="submit" />
@@ -46,7 +48,6 @@ export function InfoForm({setUserDataInput}) {
   )
 }
 
-// eslint-disable-next-line react/prop-types
 export function InfoCard({name, email}) {
 
   return (
