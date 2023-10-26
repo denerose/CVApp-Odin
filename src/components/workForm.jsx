@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export function WorkForm({setWork, currentWork}) {
     const [inputs, setInputs] = useState({});
@@ -12,6 +13,8 @@ export function WorkForm({setWork, currentWork}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        const newID = uuidv4();
+        setInputs(values => ({...values, uid: newID}))
         console.log(inputs)
         if (currentWork.length < 0) {setWork(inputs)}
         else {
