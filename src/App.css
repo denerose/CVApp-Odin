@@ -34,9 +34,25 @@ main {
 }
 
 .educationCard {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
-  justify-content: left;
-  gap: 1px;
+  display: block;
+  text-align: left;
+  line-height: 10%;
+  margin: 1em;
+}
+
+.workCard {
+  display: block;
+  text-align: left;
+  line-height: 10%;
+  margin: 1em;
+}
+
+.removeBtn {
+  font-size: xx-small;
+  margin: auto;
+  align-self: flex-end;
+}
+
+.workBox, .eduBox {
+  border: 0.5px solid rgba(191, 156, 248, 0.327);
 }

@@ -53,7 +53,7 @@ function App() {
         <div>
           <h3>Education</h3>
           {educationArray.map((education) => {
-            return <div key={education.uid}>
+            return <div key={education.uid} className='eduBox'>
               <EducationCard
               props={education}
               />
@@ -64,7 +64,7 @@ function App() {
         <div>
           <h3>Work History</h3>
           {workArray.map((work) => {
-            return <div key={work.uid}>
+            return <div key={work.uid} className='workBox'>
               <WorkCard 
               props={work}
               />
