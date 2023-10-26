@@ -4,6 +4,7 @@ import { InfoForm,  InfoCard } from './components/infoForm'
 import { EducationForm } from './components/educationForm'
 import EducationCard from './components/educationCard'
 import { WorkForm } from './components/workForm'
+import { WorkCard } from './components/workCard'
 
 
 function App() {
@@ -19,6 +20,12 @@ function App() {
     const newList = educationArray.filter(item => item.uid !== keyToRemove)
     console.log(newList)
     setEducationArray(newList)
+  }
+
+  function removeWorkRecord(keyToRemove){
+    const newList = workArray.filter(item => item.uid !== keyToRemove)
+    console.log(newList)
+    setWorkArray(newList)
   }
   
   return (
@@ -56,6 +63,14 @@ function App() {
         </div>
         <div>
           <h3>Work History</h3>
+          {workArray.map((work) => {
+            return <div key={work.uid}>
+              <WorkCard 
+              props={work}
+              />
+            <button type="button" className="removeBtn" onClick={() => removeWorkRecord(work.uid)}>remove</button>
+            </div>
+          })}
         </div>
       </div>
     </main>
