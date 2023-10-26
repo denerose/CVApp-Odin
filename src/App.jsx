@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { InfoForm,  InfoCard } from './components/infoForm'
 import { EducationForm } from './components/educationForm'
+import EducationCard from './components/educationCard'
 
 
 function App() {
@@ -10,9 +11,8 @@ function App() {
     email: "email@example.com"
   })
 
-  const [educationArray, setEducationArray] = useState([{uni: 'test'}])
+  const [educationArray, setEducationArray] = useState([])
   
-
   return (
     <main>
       <div className="editorWindow">
@@ -32,11 +32,17 @@ function App() {
           email={userData.email}
         />
         <div>
+          <h3>Education</h3>
           {educationArray.map((education, index) => {
             return <div key={index}>
-              <h3>{education.uni}</h3>
+              <EducationCard
+              props={education}
+              />
             </div>
           })}
+        </div>
+        <div>
+          <h3>Work History</h3>
         </div>
       </div>
     </main>

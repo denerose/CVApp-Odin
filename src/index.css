@@ -89,3 +89,7 @@ input[type=submit] {
   max-width: 45%;
   align-self: center;
 }
+
+input[type=year] {
+  max-width: 3rem;
+}

@@ -51,7 +51,7 @@ export function InfoCard({name, email}) {
 
   return (
     <div className='sectionCard'>
-      <h3>{name}</h3>
+      <h2>{name}</h2>
       <p>{email}</p>
     </div>
   )

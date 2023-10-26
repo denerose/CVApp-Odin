@@ -13,7 +13,9 @@ export function EducationForm({newEducation, currentEducation}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(inputs)
-        newEducation((currentEducation) => [...currentEducation, inputs])
+        if (currentEducation.length < 0) {newEducation(inputs)}
+        else {
+        newEducation(() => [...currentEducation, inputs])}
     }
 
     return (
@@ -28,6 +30,35 @@ export function EducationForm({newEducation, currentEducation}) {
                 onChange={handleChange}
                 autoComplete='no'
             />
+            <label>Qualification</label>
+                <input 
+                type="text" 
+                name="qual" 
+                value={inputs.qual || ""} 
+                placeholder='Bachelor of Arts (Gender Studies)'
+                onChange={handleChange}
+                autoComplete='no'
+                />
+            <div className="dateBox">
+            <label>From:</label>
+                <input 
+                    type="year" 
+                    name="from" 
+                    value={inputs.from || ""} 
+                    placeholder='2000'
+                    onChange={handleChange}
+                    autoComplete='year'
+                />
+            <label>To:</label>
+                <input 
+                    type="year" 
+                    name="to" 
+                    value={inputs.to || ""} 
+                    placeholder='2005'
+                    onChange={handleChange}
+                    autoComplete='year'
+                />
+            </div>
             <input type="submit" />
         </form>
     )}

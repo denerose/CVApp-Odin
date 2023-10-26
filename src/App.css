@@ -23,3 +23,17 @@ main {
   min-width: 45vw;
   flex-basis: 49%;
 }
+
+.dateBox {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 1em;
+}
+
+.educationCard {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: left;
+  gap: 1px;
+}

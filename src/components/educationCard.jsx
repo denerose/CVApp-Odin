@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
-function EducationCard({uni}) {
+function EducationCard({props}) {
 
     return (
-        <h4>{uni}</h4>
+        <div className="educationCard">
+            <h4>{props.uni}</h4>
+            <p>{props.qual}</p>
+            <p>{props.from} - {props.to}</p>
+        </div>
     )
 }
 
